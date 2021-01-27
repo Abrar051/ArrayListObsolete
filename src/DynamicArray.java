@@ -26,11 +26,32 @@ public class DynamicArray {
         data[index]=obj;
         return false;
     }
-    public void takeInput (DynamicArray str , int length)
+    public void put (int index , String obj)
     {
-
+        int length=0;
+        String temp;
+        while (true)
+        {
+            if (data[length]==null)
+            {
+                break;
+            }
+            else
+            {
+                length++;
+            }
+        }
+        //length++;
+        //data[index-1]=obj;
+        //System.out.println("Your length is "+length);
+        for (int i=length+1;i>index;i--)
+        {
+            data[i]=data[i-1];
+            data[i-1]=null;
+        }
+        data[index-1]=obj;
     }
-    public void printString (DynamicArray str)
+    public void printString (DynamicArray str , int length )
     {
         for (int i=0;i< str.data.length;i++)
         {
