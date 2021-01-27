@@ -1,8 +1,6 @@
-import java.lang.reflect.Array;
 import java.util.Arrays;
-import java.util.*;
 
-public class DynamicArray <Type>{
+public class DynamicArray {
     Object[] data;
     int size;
     public DynamicArray ()
@@ -13,16 +11,20 @@ public class DynamicArray <Type>{
     public int getSize (){
         return data.length;
     }
-    public Type get (int index)
+    public String get (int index)
     {
-        return (Type) data[index];
+        return (String) data[index];
     }
     public void add (Object obj)
     {
         ensureCapacity (size+1);
         data[size++]=obj;
     }
-
+    public boolean add (int index , Object obj)
+    {
+        data[index]=obj;
+        return false;
+    }
     private void ensureCapacity(int minimumCapacity) {
         int oldSize = getSize();
         if (minimumCapacity>oldSize)
