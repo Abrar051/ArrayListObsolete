@@ -3,7 +3,7 @@ import java.util.*;
 public class CallArray {
     public static void main (String args[]){
         Scanner input = new Scanner(System.in);
-        DynamicArray <String> str = new DynamicArray<String>();
+        DynamicArray str = new DynamicArray();
         while (true)
         {
             System.out.println("Enter 1 for input 2 for break : ");
@@ -23,6 +23,12 @@ public class CallArray {
         {
             System.out.print(" "+str.get(i));
         }
+        str.add(2,"bmhh");
         System.out.print(" ] ");
+        System.out.println();
+        for (int i=0;i< str.getSize()-1;i++)
+        {
+            System.out.print(" "+str.get(i));
+        }
     }
 }
