@@ -8,3 +8,7 @@
 # Editor-based HTTP Client requests
 /httpRequests/
 /ArrayList.iml
+.idea/
+out/
+*.class
+
