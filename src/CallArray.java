@@ -1,5 +1,6 @@
 ///Dynamic array
-import java.util.*;
+
+import java.util.Scanner;
 public class CallArray {
     public static void main (String args[]){
         Scanner input = new Scanner(System.in);
@@ -17,16 +18,23 @@ public class CallArray {
                 break;
             }
         }
-        System.out.println("Your array size is : "+(str.getSize()-1));
+        System.out.println("Your array size is : "+(str.data.length));
         System.out.print(" [ ");
-        for (int i=0;i< str.getSize()-1;i++)
+        for (int i=0;i< str.data.length;i++)
         {
-            System.out.print(" "+str.get(i));
+            if (str.get(i)==null)
+            {
+                System.out.print("");
+                break;
+            }
+            else{
+                System.out.print(" "+str.get(i));
+            }
         }
         str.add(2,"bmhh");
         System.out.print(" ] ");
         System.out.println();
-        for (int i=0;i< str.getSize()-1;i++)
+        for (int i=0;i< str.data.length-1;i++)
         {
             System.out.print(" "+str.get(i));
         }
