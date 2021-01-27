@@ -1,5 +1,5 @@
 import java.util.Arrays;
-
+import java.util.Scanner;
 public class DynamicArray {
     String[] data;
     int size;
@@ -25,6 +25,23 @@ public class DynamicArray {
     {
         data[index]=obj;
         return false;
+    }
+    public void takeInput (DynamicArray str , int length)
+    {
+
+    }
+    public void printString (DynamicArray str)
+    {
+        for (int i=0;i< str.data.length;i++)
+        {
+            if (str.get(i)==null)
+            {
+                System.out.print("");
+                break;
+            }
+            else
+                System.out.print(" " + str.get(i));
+        }
     }
     private void ensureCapacity(int minimumCapacity) {
         int oldSize = getSize();
