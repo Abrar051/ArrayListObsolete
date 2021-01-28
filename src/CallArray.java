@@ -24,12 +24,14 @@ public class CallArray {
         System.out.println("Your array size is : "+length);
         System.out.print(" [ ");
         str.printString(str, length);
+        System.out.print(" ] ");
         //str.add(2,"bmhh");
         str.put(3,"hyhyh");
-        System.out.print(" ] ");
         System.out.println();
         str.printString(str,length+1);
         System.out.println();
-        System.out.println("String size is +"+str.getSize());
+        str.remove("hyhyh");
+        str.printString(str,length);
+        //System.out.println(" String size is +"+str.getSize());
     }
 }
