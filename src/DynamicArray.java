@@ -41,13 +41,13 @@ public class DynamicArray {
                 length++;
             }
         }
-        //length++;
+        length++;
         //data[index-1]=obj;
         //System.out.println("Your length is "+length);
-        for (int i=length+1;i>index;i--)
+        for (int i= data.length-1;i>=index;i--)
         {
-            data[i]=data[i-1];
-            data[i-1]=null;
+            temp=data[i-1];
+            data[i]=temp;
         }
         data[index-1]=obj;
     }
