@@ -46,7 +46,7 @@ public class DynamicArray {
                 add(null);
                 if (i==(index-1))
                 {
-                    data[i-1]=obj;
+                    data[i]=obj;
                     break;
                 }
 
@@ -87,8 +87,8 @@ public class DynamicArray {
         return length;
     }
     public void remove(String str) {
-        int length = lengthCounter();
-        for (int i=0;i<length;i++)
+        //int length = lengthCounter();
+        for (int i=0;i<data.length;i++)
         {
             if (data[i]==str)
             {
