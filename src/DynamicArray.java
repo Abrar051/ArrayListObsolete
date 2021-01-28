@@ -3,73 +3,100 @@ import java.util.Scanner;
 public class DynamicArray {
     String[] data;
     int size;
-    public DynamicArray ()
-    {
-        size=0;
+
+    public DynamicArray() {
+        size = 0;
         data = new String[1];
     }
-    public int getSize (){
+
+    public int getSize() {
 
         return data.length;
     }
-    public String get (int index)
-    {
+
+    public String get(int index) {
         return (String) data[index];
     }
-    public void add (String obj)
-    {
-        ensureCapacity (size+1);
-        data[size++]=obj;
+
+    public void add(String obj) {
+        ensureCapacity(size + 1);
+        data[size++] = obj;
     }
-    public boolean add (int index , String obj)
-    {
-        data[index]=obj;
+
+    public boolean add(int index, String obj) {
+        data[index] = obj;
         return false;
     }
-    public void put (int index , String obj)
-    {
-        int length=0;
+
+    public void put(int index, String obj) {
+        int length = 0;
         String temp;
-        while (true)
-        {
-            if (data[length]==null)
-            {
+        while (true) {
+            if (data[length] == null) {
                 break;
-            }
-            else
-            {
+            } else {
                 length++;
             }
         }
-        length++;
-        //data[index-1]=obj;
-        //System.out.println("Your length is "+length);
-        for (int i= data.length-1;i>=index;i--)
-        {
-            temp=data[i-1];
-            data[i]=temp;
-        }
-        data[index-1]=obj;
-    }
-    public void printString (DynamicArray str , int length )
-    {
-        for (int i=0;i< str.data.length;i++)
-        {
-            if (str.get(i)==null)
-            {
-                System.out.print("");
-                break;
+        if (index <= data.length) {
+            for (int i = data.length - 1; i >= index; i--) {
+                temp = data[i - 1];
+                data[i] = temp;
             }
-            else
+            data[index - 1] = obj;
+        } else {
+            data[length] = obj;
+        }
+    }
+
+    public void printString(DynamicArray str, int length) {
+        System.out.print(" [ ");
+        for (int i = 0; i < str.data.length; i++) {
+            if (str.get(i) == null) {
+                System.out.print("");
+                //break;
+            } else
                 System.out.print(" " + str.get(i));
         }
+        System.out.print(" ] ");
     }
+
     private void ensureCapacity(int minimumCapacity) {
         int oldSize = getSize();
-        if (minimumCapacity>oldSize)
-        {
-            int newCapacity = oldSize+5;
-            data = Arrays.copyOf(data,newCapacity);
+        if (minimumCapacity > oldSize) {
+            int newCapacity = oldSize + 5;
+            data = Arrays.copyOf(data, newCapacity);
         }
     }
+
+    public int lengthCounter ()
+    {
+        int length=0;
+        while (true) {
+            if (data[length] == null) {
+                break;
+            } else {
+                length++;
+            }
+        }
+        return length;
+    }
+    public void remove(String str) {
+        int length = lengthCounter();
+        for (int i=0;i<length;i++)
+        {
+            if (data[i]==str)
+            {
+                data[i]=null;
+                //break;
+            }
+        }
+    }
+
+    public void remove (int index , String str)
+    {
+        data[index-1]=null;
+
+    }
+
 }
