@@ -29,15 +29,9 @@ public class DynamicArray {
     }
 
     public void put(int index, String obj) {
-        int length = 0;
+
         String temp;
-        while (true) {
-            if (data[length] == null) {
-                break;
-            } else {
-                length++;
-            }
-        }
+        int length=lengthCounter();
         if (index <= data.length) {
             for (int i = data.length - 1; i >= index; i--) {
                 temp = data[i - 1];
