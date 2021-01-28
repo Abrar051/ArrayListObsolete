@@ -22,11 +22,9 @@ public class CallArray {
             }
         }
         System.out.println("Your array size is : "+length);
-        System.out.print(" [ ");
         str.printString(str, length);
-        System.out.print(" ] ");
         //str.add(2,"bmhh");
-        str.put(3,"hyhyh");
+        str.put(11,"hyhyh");
         System.out.println();
         str.printString(str,length+1);
         System.out.println();
