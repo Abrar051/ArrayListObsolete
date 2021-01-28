@@ -25,7 +25,7 @@ public class CallArray {
         System.out.print(" [ ");
         str.printString(str, length);
         //str.add(2,"bmhh");
-        //str.put(3,"hyhyh");
+        str.put(3,"hyhyh");
         System.out.print(" ] ");
         System.out.println();
         str.printString(str,length+1);
