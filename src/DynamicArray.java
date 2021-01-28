@@ -39,7 +39,18 @@ public class DynamicArray {
             }
             data[index - 1] = obj;
         } else {
-            data[length] = obj;
+            //data[length] = obj;
+
+            for (int i= data.length;i<index;i++)
+            {
+                add(null);
+                if (i==(index-1))
+                {
+                    data[i-1]=obj;
+                    break;
+                }
+
+            }
         }
     }
 
@@ -47,7 +58,7 @@ public class DynamicArray {
         System.out.print(" [ ");
         for (int i = 0; i < str.data.length; i++) {
             if (str.get(i) == null) {
-                System.out.print("");
+                System.out.print(" null ");
                 //break;
             } else
                 System.out.print(" " + str.get(i));
