@@ -96,12 +96,25 @@ public class DynamicArray {
                 //break;
             }
         }
+        nullRemover();
+    }
+    public void nullRemover ()
+    {
+        String[] refinedArray = new String[data.length];
+        int count = -1;
+        for(String s : data) {
+            if(s != null) { // Skips over null values
+                refinedArray[++count] = s;
+            }
+        }
+// Returns an array with the same data but refits it to a new length
+        data = Arrays.copyOf(refinedArray, count + 1);
     }
 
     public void remove (int index , String str)
     {
         data[index-1]=null;
-
+        nullRemover();
     }
 
 }
